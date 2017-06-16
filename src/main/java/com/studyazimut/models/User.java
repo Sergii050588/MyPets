@@ -17,4 +17,9 @@ public class User {
   private long id;
   private String login;
   private String password;
+  private String role;
+  
+  public long getId() {
+    return id;
+  }
 }

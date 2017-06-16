@@ -21,7 +21,6 @@ GET request to /api/pet/ returns a list of pets
 GET request to /api/pet/1 returns the pet with ID 1
 POST request to /api/pet/ with a pet object as JSON creates a new pet
 PUT request to /api/pet/3 with a pet object as JSON updates the pet with ID 3
-DELETE request to /api/pet/4 deletes the pet with ID 4
 */
 
 @RestController
@@ -60,7 +59,7 @@ public class PetsController {
     return new ResponseEntity<>(pet, HttpStatus.OK);
   }
   
-  // -------------------Create a pet-------------------------------------------
+  // -------------------Create a Pet-------------------------------------------
   
   @RequestMapping(value = "/pet", method = RequestMethod.POST)
   public ResponseEntity<?> createPet(@RequestBody Pet pet, UriComponentsBuilder ucBuilder) {
