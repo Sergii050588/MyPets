@@ -1,0 +1,30 @@
+<a class="btn btn-primary" href="/pets/new">Add new Pet</a>
+
+<table class="table table-striped" id="pets_index">
+    <thead>
+        <tr>
+            <th>Pets</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-th-each="pet : ${pets}">
+            <td class="name" data-th-text="${pet.name}"></td>
+            <td>
+                <a th:href="@{'/pets/{id}/delete'(id=${pet.id})}" class="delete" th:attr="name=${pet.name}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </span>
+                </a>
+            </td>
+            <td>
+                <a th:href="@{'/pets/{id}/edit'(id=${pet.id})}" class="edit" th:attr="name=${pet.name}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </span>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
