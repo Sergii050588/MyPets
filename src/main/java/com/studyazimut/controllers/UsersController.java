@@ -1,7 +1,7 @@
 package com.studyazimut.controllers;
 
 import com.studyazimut.models.User;
-import com.studyazimut.repositories.UserRepository;
+import com.studyazimut.service.UserService;
 import com.studyazimut.util.CustomErrorType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,22 +17,23 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class UsersController {
   
 /*
-This is what our REST API does:
+User REST API does:
 
-POST request to /api/user/ with a User object as JSON creates a new User
+GET request to /api/user/1 returns the User with ID 1
+POST request to /api/user with a User object as JSON creates a new User
 */
   
   public static final Logger logger = LoggerFactory.getLogger(PetsController.class);
   
   @Autowired
-  private UserRepository userRepository;
+  private UserService userService;
   
   // -------------------Retrieve Single pet------------------------------------------
   
   @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
   public ResponseEntity<?> getUser(@PathVariable("id") long id) {
     logger.info("Fetching User with id {}", id);
-    User pet = userRepository.findOne(id);
+    User pet = userService.findOne(id);
     if (pet == null) {
       logger.error("User with id {} not found.", id);
       return new ResponseEntity(new CustomErrorType("User with id " + id
@@ -47,7 +48,7 @@ POST request to /api/user/ with a User object as JSON creates a new User
   public ResponseEntity<?> createPet(@RequestBody User user, UriComponentsBuilder ucBuilder) {
     logger.info("Creating user : {}", user);
     
-    userRepository.save(user);
+    userService.save(user);
     
     HttpHeaders headers = new HttpHeaders();
     headers.setLocation(ucBuilder.path("/api/user/{id}").buildAndExpand(user.getId()).toUri());

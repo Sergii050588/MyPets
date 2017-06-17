@@ -1,1 +1,0 @@
-ALTER TABLE users add role VARCHAR(255);

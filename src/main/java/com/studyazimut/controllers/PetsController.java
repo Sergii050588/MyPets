@@ -1,7 +1,7 @@
 package com.studyazimut.controllers;
 
 import com.studyazimut.models.Pet;
-import com.studyazimut.repositories.PetRepository;
+import com.studyazimut.service.PetService;
 import com.studyazimut.util.CustomErrorType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,12 +15,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 /*
-This is what our REST API does:
+Pet REST API does:
 
-GET request to /api/pet/ returns a list of pets
-GET request to /api/pet/1 returns the pet with ID 1
-POST request to /api/pet/ with a pet object as JSON creates a new pet
-PUT request to /api/pet/3 with a pet object as JSON updates the pet with ID 3
+GET request to /api/pet returns a list of pets
+GET request to /api/pet/1 returns the Pet with ID 1
+POST request to /api/pet with a Pet object as JSON creates a new Pet
+PUT request to /api/pet/3 with a Pet object as JSON updates the Pet with ID 3
 */
 
 @RestController
@@ -30,7 +30,7 @@ public class PetsController {
   public static final Logger logger = LoggerFactory.getLogger(PetsController.class);
   
   @Autowired
-  private PetRepository petService; //Service which will do all data retrieval/manipulation work
+  private PetService petService; //Service which will do all data retrieval/manipulation work
   
   // -------------------Retrieve All Pets---------------------------------------------
   
@@ -91,66 +91,4 @@ public class PetsController {
     petService.save(currentPet);
     return new ResponseEntity<Pet>(currentPet, HttpStatus.OK);
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /*
-  
-  @Autowired
-  private PetRepository repository;
-  
-  @RequestMapping(value = "", method = RequestMethod.GET)
-  public String listPets(Model model) {
-    model.addAttribute("pets", repository.findAll());
-    return "pets/index";
-  }
-  
-  @RequestMapping(value = "/new", method = RequestMethod.GET)
-  public String newPet() {
-    return "pets/new";
-  }
-  
-  @RequestMapping(value = "/create", method = RequestMethod.POST)
-  public ModelAndView create(@RequestParam("name") String name) {
-    repository.save(new Pet(name));
-    return new ModelAndView("redirect:/pets");
-  }
-  
-  @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
-  public ModelAndView delete(@PathVariable long id) {
-    repository.delete(id);
-    return new ModelAndView("redirect:/pets");
-  }
-  
-  @RequestMapping(value = "/update", method = RequestMethod.POST)
-  public ModelAndView update(@RequestParam("pet_id") long id,
-                             @RequestParam("name") String name) {
-    Pet pet = repository.findOne(id);
-    pet.setName(name);
-    repository.save(pet);
-    return new ModelAndView("redirect:/pets");
-  }
- */
-  
 }

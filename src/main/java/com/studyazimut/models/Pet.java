@@ -4,8 +4,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,31 +30,5 @@ public class Pet {
   
   public void setName(String name) {
     this.name = name;
-  }
-  
-  @Override
-  public String toString() {
-    return "Pet{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            '}';
-  }
-  
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    
-    Pet pet = (Pet) o;
-    
-    if (id != pet.id) return false;
-    return name.equals(pet.name);
-  }
-  
-  @Override
-  public int hashCode() {
-    int result = (int) (id ^ (id >>> 32));
-    result = 31 * result + name.hashCode();
-    return result;
   }
 }
