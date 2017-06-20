@@ -29,6 +29,10 @@ public class User {
     this.password = user.getPassword();
   }
   
+  public User(String pavel, String password, String roleName) {
+    
+  }
+  
   public String getUsername() {
     return username;
   }

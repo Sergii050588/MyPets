@@ -1,7 +1,5 @@
 package com.studyazimut.models;
 
-import org.springframework.security.core.GrantedAuthority;
-
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +15,10 @@ public class Role {
   private String role;
   
   public Role() {
+  }
+  
+  public Role(String role) {
+    this.role = role;
   }
   
   public long getRoleId() {

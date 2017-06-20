@@ -25,7 +25,7 @@ PUT request to /api/pet/3 with a Pet object as JSON updates the Pet with ID 3
 
 @RestController
 @RequestMapping("/api")
-public class PetsController {
+public class PetsController extends Pet {
   
   public static final Logger logger = LoggerFactory.getLogger(PetsController.class);
   

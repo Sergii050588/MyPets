@@ -45,7 +45,7 @@ POST request to /api/user with a User object as JSON creates a new User
   // -------------------Create a User-------------------------------------------
   
   @RequestMapping(value = "/user", method = RequestMethod.POST)
-  public ResponseEntity<?> createPet(@RequestBody User user, UriComponentsBuilder ucBuilder) {
+  public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
     logger.info("Creating user : {}", user);
     
     userService.save(user);
