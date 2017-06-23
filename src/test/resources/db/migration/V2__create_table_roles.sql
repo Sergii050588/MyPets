@@ -1,1 +1,0 @@
-create table roles (id bigserial primary key, role varchar(255));
