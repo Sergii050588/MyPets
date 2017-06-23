@@ -1,18 +1,14 @@
 package com.studyazimut.domain;
 
-
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.hateoas.Identifiable;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "pets")
 public class Pet implements Identifiable<Long> {
   
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
   @Column(name = "pet_id")
   private long id;
   

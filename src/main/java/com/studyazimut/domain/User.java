@@ -1,28 +1,24 @@
 package com.studyazimut.domain;
 
-import lombok.Data;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
 public class User {
   
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
   @Column(name="user_id")
   private long id;
   
   @Column(name="user_name", nullable=false)
-  private String username;
+  private String userName;
   
   public User() {
   }
   
-  public User(String username) {
-    this.username = username;
+  public User(String userName) {
+    this.userName = userName;
   }
   
   public long getid() {
@@ -33,19 +29,19 @@ public class User {
     this.id = id;
   }
   
-  public String getusername() {
-    return username;
+  public String getuserName() {
+    return userName;
   }
   
-  public void setusername(String username) {
-    this.username = username;
+  public void setuserName(String userName) {
+    this.userName = userName;
   }
   
   @Override
   public String toString() {
     return "User{" +
             "id=" + id +
-            ", username='" + username + '\'' +
+            ", userName='" + userName + '\'' +
             '}';
   }
   
@@ -57,13 +53,14 @@ public class User {
     User user = (User) o;
     
     if (id != user.id) return false;
-    return username.equals(user.username);
+    return userName.equals(user.userName);
   }
   
   @Override
   public int hashCode() {
     int result = (int) (id ^ (id >>> 32));
-    result = 31 * result + username.hashCode();
+    result = 31 * result + userName.hashCode();
     return result;
   }
+  
 }
