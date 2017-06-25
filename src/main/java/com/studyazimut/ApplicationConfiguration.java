@@ -33,6 +33,7 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers(HttpMethod.PUT, "/pets/**").hasRole("USER")
             .antMatchers(HttpMethod.PATCH, "/pets/**").hasRole("USER")
             .antMatchers(HttpMethod.DELETE, "/pets/**").hasRole("USER")
+            .antMatchers(HttpMethod.POST, "/users/**").permitAll()
             .and()
             .csrf().disable()
             .headers().frameOptions().sameOrigin();

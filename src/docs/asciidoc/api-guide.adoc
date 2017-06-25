@@ -1,4 +1,4 @@
-= Pet Project - API Guide
+= Pets Project - API Guide
 Sergii Melnichenko;
 :doctype: book
 :toc:
@@ -27,9 +27,6 @@ Sergii Melnichenko;
 
 | `PATCH`
 | Used to update an existing resource, including partial updates
-
-| `DELETE`
-| Used to delete an existing resource
 |===
 
 [[overview-http-status-codes]]
@@ -76,51 +73,62 @@ from resource to resource.
 [[pets]]
 == Pets
 
-The Pets resource / 'pets' relation is used to create and list pets.
+The pets resource / 'pets' relation is used to create and list pets.
 
 [[resources-pets-create]]
 
-=== Creating an pet
+=== Creating a pet
 
-A `POST` request is used to create an pet
-
-==== Example curl request
-
-include::{snippets}/create-pet/curl-request.adoc[]
-
-==== Example HTTP request
-
-include::{snippets}/create-pet/http-request.adoc[]
-
-==== Example response
-
-include::{snippets}/create-pet/http-response.adoc[]
-
-==== Links
-
-include::{snippets}/create-pet/links.adoc[]
-
-==== Response Fields
-
-include::{snippets}/create-pet/response-fields.adoc[]
-
+A `POST` request is used to create a pet
 
 ==== Example curl request
 
-include::{snippets}/publish-pet/curl-request.adoc[]
+include::create-pet/curl-request.adoc[]
 
 ==== Example HTTP request
 
-include::{snippets}/publish-pet/http-request.adoc[]
+include::create-pet/http-request.adoc[]
 
 ==== Example response
 
-include::{snippets}/publish-pet/http-response.adoc[]
+include::create-pet/http-response.adoc[]
 
 ==== Links
 
-include::{snippets}/publish-pet/links.adoc[]
+include::create-pet/links.adoc[]
 
 ==== Response Fields
 
-include::{snippets}/publish-pet/response-fields.adoc[]
+include::create-pet/response-fields.adoc[]
+
+[[users]]
+== Users
+
+The users resource / 'users' relation is used to create and list users.
+
+[[resources-users-create]]
+
+=== Creating a user
+
+A `POST` request is used to create a user
+
+==== Example curl request
+
+include::create-user/curl-request.adoc[]
+
+==== Example HTTP request
+
+include::create-user/http-request.adoc[]
+
+==== Example response
+
+include::create-user/http-response.adoc[]
+
+==== Links
+
+include::create-user/links.adoc[]
+
+==== Response Fields
+
+include::create-user/response-fields.adoc[]
+

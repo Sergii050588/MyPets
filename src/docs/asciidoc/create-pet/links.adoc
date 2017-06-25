@@ -1,0 +1,13 @@
+|===
+|Relation|Description
+
+|`self`
+|This pet
+
+|`pet`
+|This <<pets, pet>>
+
+|`update`
+|Updates this pet via PATCH
+
+|===

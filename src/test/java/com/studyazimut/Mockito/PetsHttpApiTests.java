@@ -1,4 +1,4 @@
-package com.studyazimut;
+package com.studyazimut.Mockito;
 
 import com.studyazimut.domain.Pet;
 import com.studyazimut.domain.User;
@@ -66,48 +66,28 @@ public class PetsHttpApiTests {
             .contentType(MediaType.APPLICATION_JSON)
             .with(user(userDetailsService.loadUserByUsername(Admin.ADMIN))));
     
-    final Pet createdBooking = findCreatedBooking();
+    final Pet createdPets = findPets();
     resultActions.andExpect(status().isCreated())
-            .andExpect(header().string(HttpHeaders.LOCATION, "http://localhost/pets/" + createdBooking.getId()))
-            .andExpect(jsonPath("$.type", is(pet.getType().name())))
-            .andExpect(jsonPath("$.amount", is(pet.getAmount().intValue())))
-            .andExpect(jsonPath("$.currency", is(pet.getCurrency().name())))
-            .andExpect(jsonPath("$.rate", is(pet.getRate().doubleValue())))
-            .andExpect(jsonPath("$.location.city", is(pet.getLocation().getCity())))
-            .andExpect(jsonPath("$.location.area", is(pet.getLocation().getArea())))
-            .andExpect(jsonPath("$.comment", is(pet.getComment())));
+            .andExpect(header().string(HttpHeaders.LOCATION, "http://localhost/pets/" + createdPets.getId()))
+            .andExpect(jsonPath("$.petType", is(pet.getPetType().name())))
+            .andExpect(jsonPath("$.petName", is(pet.getPetName())));
   }
   
-  private Pet findCreatedBooking() {
+  private Pet findPets() {
     return petRepository.findAll(new Sort(Sort.Direction.DESC, "id")).iterator().next();
   }
   
   private Pet pet() {
     Pet pet = new Pet();
-    pet.setType(pet.Type.BUY);
-    pet.setAmount(BigInteger.valueOf(9999));
-    pet.setCurrency(pet.Currency.USD);
-    pet.setRate(BigDecimal.valueOf(21.5));
-    pet.setLocation(new pet.Location("Kyiv", "Pechersk"));
-    pet.setComment("need it now!");
-    pet.setUser(referenceUser);
+    pet.setPetType(Pet.Type.CAT);
+    pet.setPetName("Murzik");
     return pet;
   }
   
-  private static String saveRequestJsonString(pet pet) {
+  private static String saveRequestJsonString(Pet pet) {
     return "{\n" +
-            "  \"type\": \"" + pet.getType() + "\",\n" +
-            "  \"amount\": " + pet.getAmount() + ",\n" +
-            "  \"currency\": \"" + pet.getCurrency() + "\",\n" +
-            "  \"rate\": " + pet.getRate() + ",\n" +
-            "  \"location\": {\n" +
-            "    \"city\": \"" + pet.getLocation().getCity() + "\",\n" +
-            "    \"area\": \"" + pet.getLocation().getArea() + "\"\n" +
-            "  },\n" +
-            "  \"user\": \"/users/" + pet.getUser().getId() + "\",\n" +
-            "  \"comment\": \"" + pet.getComment() + "\"\n" +
+            "  \"petType\": \"" + pet.getPetType() + "\",\n" +
+            "  \"petName\": \"" + pet.getPetName() + "\"\n" +
             "}";
   }
-  
-  
 }

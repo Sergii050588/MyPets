@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`_links`
+|`Object`
+|Links
+
+|`userName`
+|`String`
+|Sergey
+
+|===

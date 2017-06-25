@@ -1,0 +1,10 @@
+|===
+|Relation|Description
+
+|`self`
+|This user
+
+|`user`
+|This <<users, user>>
+
+|===

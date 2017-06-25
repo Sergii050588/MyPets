@@ -3,6 +3,7 @@ package com.studyazimut.domain;
 import org.springframework.hateoas.Identifiable;
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "pets")
 public class Pet implements Identifiable<Long> {

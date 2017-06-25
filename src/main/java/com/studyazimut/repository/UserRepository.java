@@ -14,14 +14,6 @@ import java.util.Optional;
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
   User findByUserName(String username);
 
-  @PreAuthorize("hasRole('ROLE_ADMIN')")
-  @Override
-  Iterable<User> findAll(Sort sort);
-  
-  @PreAuthorize("hasRole('ROLE_ADMIN')")
-  @Override
-  Page<User> findAll(Pageable pageable);
-
   @RestResource(exported = false)
   @Override
   void delete(Long aLong);

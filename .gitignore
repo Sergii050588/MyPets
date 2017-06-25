@@ -7,3 +7,5 @@
 /mvnw
 /mvnw.cmd
 target/
+/.gradle/
+/build/

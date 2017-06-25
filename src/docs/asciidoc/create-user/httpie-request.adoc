@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ echo '{
+  "userName": "Sergey"
+}' | http POST 'http://localhost:8080/users' 'Content-Type:application/json;charset=UTF-8' 'Accept:application/hal+json'
+----

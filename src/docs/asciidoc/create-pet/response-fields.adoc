@@ -1,0 +1,16 @@
+|===
+|Path|Type|Description
+
+|`_links`
+|`Object`
+|Links
+
+|`petType`
+|`String`
+|Type of the pet, one of: DOG, CAT
+
+|`petName`
+|`String`
+|Murzik
+
+|===

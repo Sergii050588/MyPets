@@ -1,0 +1,7 @@
+[source,bash]
+----
+$ echo '{
+  "petType": "CAT",
+  "petName": "Murzik"
+}' | http POST 'http://localhost:8080/pets' 'Content-Type:application/json;charset=UTF-8' 'Accept:application/hal+json'
+----
