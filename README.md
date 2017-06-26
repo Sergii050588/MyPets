@@ -8,7 +8,7 @@ Project uses [Maven](http://maven.apache.org/) as a build tool.
 
 Create Databases in PostgreSQL with User: "postgres". First: "petproject", second: "petproject_test".
 
-Command line: psql -U postgres -> create database petproject; -> create database petproject;
+Command line: psql -U postgres -> create database petproject; -> create database petproject_test;
 
 Clone or download the project. Navigate to the project folder.
 
