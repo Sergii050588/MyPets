@@ -8,25 +8,22 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
 ETag: "0"
-Location: http://localhost:8080/pets/2
+Location: http://localhost:8080/pets/7
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 343
+Content-Length: 271
 
 {
   "petName" : "Murzik",
   "petType" : "CAT",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/pets/2"
+      "href" : "http://localhost:8080/pets/7"
     },
     "pet" : {
-      "href" : "http://localhost:8080/pets/2"
+      "href" : "http://localhost:8080/pets/7"
     },
     "update" : {
-      "href" : "http://localhost:8080/pets/2"
-    },
-    "deletion" : {
-      "href" : "http://localhost:8080/pets/2"
+      "href" : "http://localhost:8080/pets/7"
     }
   }
 }

@@ -6,6 +6,12 @@ Make sure that [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/
 
 Project uses [Maven](http://maven.apache.org/) as a build tool.
 
+Create Databases in PostgreSQL with User: "postgres". First: "petproject", second: "petproject_test".
+
+Run the app with command: java -jar target/demo-0.0.1-SNAPSHOT.jar
+
 Start the App and navigate to [http://localhost:8080](http://localhost:8080) to surf through the app.
+
+Primary Basic Auth: Username: "admin", Password: "123".
 
 Navigate to [http://localhost:8080/api-guide](http://localhost:8080/api-guide.html) to get the App Documentation.

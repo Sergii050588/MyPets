@@ -2,7 +2,6 @@ package com.studyazimut.Mockito;
 
 import com.studyazimut.domain.User;
 import com.studyazimut.infastructure.Admin;
-import com.studyazimut.repository.PetRepository;
 import com.studyazimut.repository.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,14 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.halLinks;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.linkWithRel;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.links;
@@ -87,7 +79,7 @@ public class UsersHttpApiWithDocsTests {
             ),
             responseFields(
                     fieldWithPath("_links").type(JsonFieldType.OBJECT).description("Links"),
-                    fieldWithPath("userName").type(JsonFieldType.STRING).description("Sergey")
+                    fieldWithPath("userName").type(JsonFieldType.STRING).description("User name")
             )));
   }
   

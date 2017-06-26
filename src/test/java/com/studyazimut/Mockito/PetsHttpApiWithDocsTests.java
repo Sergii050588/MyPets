@@ -23,14 +23,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.halLinks;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.linkWithRel;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.links;
@@ -89,15 +85,14 @@ public class PetsHttpApiWithDocsTests {
             links(halLinks(),
                     linkWithRel("self").description("This pet"),
                     linkWithRel("pet").description("This <<pets, pet>>"),
-                    linkWithRel("update").description("Updates this pet via PATCH"),
-                    linkWithRel("deletion").description("Deletes this pet via DELETE")
+                    linkWithRel("update").description("Updates this pet via PATCH")
                     
             ),
             responseFields(
                     fieldWithPath("_links").type(JsonFieldType.OBJECT).description("Links"),
                     fieldWithPath("petType").type(JsonFieldType.STRING).description("Type of the pet, one of: " +
                             Stream.of(Pet.Type.values()).map(Enum::name).collect(Collectors.joining(", "))),
-                    fieldWithPath("petName").type(JsonFieldType.STRING).description("Murzik")
+                    fieldWithPath("petName").type(JsonFieldType.STRING).description("Pet name")
             )));
   }
   

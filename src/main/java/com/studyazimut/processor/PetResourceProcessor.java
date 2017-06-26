@@ -18,8 +18,6 @@ public class PetResourceProcessor implements ResourceProcessor<Resource<Pet>> {
     final Pet pet = resource.getContent();
     resource.add(entityLinks.linkToSingleResource(pet)
             .withRel("update"));
-    resource.add(entityLinks.linkToSingleResource(pet)
-            .withRel("deletion"));
     return resource;
   }
 }

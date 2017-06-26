@@ -11,6 +11,6 @@
 
 |`petName`
 |`String`
-|Murzik
+|Pet name
 
 |===

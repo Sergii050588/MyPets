@@ -7,7 +7,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Location: http://localhost:8080/users/3
+Location: http://localhost:8080/users/5
 Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 184
 
@@ -15,10 +15,10 @@ Content-Length: 184
   "userName" : "Sergey",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/users/3"
+      "href" : "http://localhost:8080/users/5"
     },
     "user" : {
-      "href" : "http://localhost:8080/users/3"
+      "href" : "http://localhost:8080/users/5"
     }
   }
 }
