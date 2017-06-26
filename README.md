@@ -8,6 +8,8 @@ Project uses [Maven](http://maven.apache.org/) as a build tool.
 
 Create Databases in PostgreSQL with User: "postgres". First: "petproject", second: "petproject_test".
 
+Build project with command: "mvn package".
+
 Run the app with command: java -jar target/demo-0.0.1-SNAPSHOT.jar
 
 Start the App and navigate to [http://localhost:8080](http://localhost:8080) to surf through the app.
